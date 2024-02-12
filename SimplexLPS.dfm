@@ -18,6 +18,7 @@ object Form1: TForm1
     Height = 81
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 739
     object GroupBox1: TGroupBox
       Left = 9
       Top = 0
@@ -61,9 +62,9 @@ object Form1: TForm1
         TabOrder = 1
         Text = '4'
       end
-      object CheckBox1: TCheckBox
-        Left = 536
-        Top = 35
+      object RandomBox: TCheckBox
+        Left = 551
+        Top = 31
         Width = 169
         Height = 17
         Caption = #1057#1083#1091#1095#1072#1081#1085#1099#1077' '#1079#1085#1072#1095#1077#1085#1080#1103
@@ -72,10 +73,11 @@ object Form1: TForm1
       object ButtonAdd: TButton
         Left = 319
         Top = 26
-        Width = 211
+        Width = 227
         Height = 28
         Caption = #1047#1072#1076#1072#1090#1100' '#1089#1080#1084#1087#1083#1077#1082#1089'-'#1090#1072#1073#1083#1080#1094#1091
         TabOrder = 3
+        OnClick = ButtonAddClick
       end
     end
   end
@@ -86,15 +88,17 @@ object Form1: TForm1
     Height = 304
     Align = alTop
     TabOrder = 1
+    ExplicitWidth = 739
     object StringGrid1: TStringGrid
       Left = 1
       Top = 1
       Width = 739
       Height = 302
       Align = alClient
+      DefaultColWidth = 85
       TabOrder = 0
-      ExplicitLeft = -10
-      ExplicitTop = -2
+      OnClick = StringGrid1Click
+      ExplicitWidth = 737
     end
   end
   object Panel3: TPanel
@@ -104,8 +108,7 @@ object Form1: TForm1
     Height = 88
     Align = alLeft
     TabOrder = 2
-    ExplicitTop = 407
-    ExplicitHeight = 66
+    ExplicitHeight = 80
     object GroupBox2: TGroupBox
       Left = 9
       Top = 6
@@ -139,6 +142,7 @@ object Form1: TForm1
         Width = 152
         Height = 20
         Alignment = taCenter
+        AutoSize = False
         Caption = '0'
       end
       object ButtonLeft: TButton
@@ -147,6 +151,7 @@ object Form1: TForm1
         Width = 73
         Height = 25
         Caption = '<-'
+        Enabled = False
         TabOrder = 0
       end
       object ButtonRight: TButton
@@ -155,6 +160,7 @@ object Form1: TForm1
         Width = 73
         Height = 25
         Caption = '->'
+        Enabled = False
         TabOrder = 1
       end
       object ButtonCalc: TButton
@@ -163,7 +169,9 @@ object Form1: TForm1
         Width = 220
         Height = 25
         Caption = #1055#1077#1088#1077#1089#1095#1080#1090#1072#1090#1100
+        Enabled = False
         TabOrder = 2
+        OnClick = ButtonCalcClick
       end
     end
   end
@@ -174,7 +182,8 @@ object Form1: TForm1
     Height = 88
     Align = alClient
     TabOrder = 3
-    ExplicitTop = 390
+    ExplicitWidth = 186
+    ExplicitHeight = 80
     object ButtonClose: TButton
       Left = 24
       Top = 32
@@ -188,6 +197,7 @@ object Form1: TForm1
       Font.Style = []
       ParentFont = False
       TabOrder = 0
+      OnClick = ButtonCloseClick
     end
   end
 end
