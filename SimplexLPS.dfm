@@ -163,6 +163,7 @@ object Form1: TForm1
         Caption = '->'
         Enabled = False
         TabOrder = 1
+        OnClick = ButtonRightClick
       end
       object ButtonCalc: TButton
         Left = 310

@@ -33,6 +33,7 @@ type
     procedure ButtonAddClick(Sender: TObject);
     procedure ButtonCalcClick(Sender: TObject);
     procedure ButtonLeftClick(Sender: TObject);
+    procedure ButtonRightClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -64,7 +65,7 @@ begin
       StringGrid1.ColCount := StrToInt(EditN.Text) + 2;
       StringGrid1.RowCount := StrToInt(EditM.Text) + 2;
       StringGrid1.Cells[0,0] := 'базис. / своб.';
-      StringGrid1.Cells[StrToInt(EditM.Text) + 1,0] := 'своб. члены';
+      StringGrid1.Cells[StrToInt(EditN.Text) + 1,0] := 'своб. члены';
       i := 0;
       for j := 1 to StringGrid1.ColCount - 2 do
         StringGrid1.Cells[j,i] := 'X' + IntToStr(j);
@@ -199,6 +200,30 @@ begin
   LabelNum.Caption:=inttostr(k);
   if k = 0 then ButtonLeft.Enabled := false;
   ButtonRight.Enabled := true;
+  ButtonCalc.Enabled := false
+end;
+
+procedure TForm1.ButtonRightClick(Sender: TObject);
+var i,j,s,n,m: integer;
+    tmp: string;
+begin
+  k := k + 1;
+  m := StringGrid1.RowCount - 1;
+  n := StringGrid1.ColCount - 1;
+  StringGrid1.row := aij[k,0];
+  StringGrid1.col := aij[k,1];
+  s := Num[k];
+  for i := 1 to m do
+    for j := 1 to n do begin
+      StringGrid1.cells[j,i] := floattostr(a[s]);
+      s := s + 1
+    end;
+  tmp := StringGrid1.Cells[0,StringGrid1.Row];
+  StringGrid1.Cells[0,StringGrid1.Row] := StringGrid1.Cells[StringGrid1.Col,0];
+  StringGrid1.Cells[StringGrid1.Col,0] := tmp;
+  LabelNum.Caption:=inttostr(k);
+  if k > kMax then ButtonRight.Enabled := false;
+  ButtonLeft.Enabled := true;
   ButtonCalc.Enabled := false
 end;
 
