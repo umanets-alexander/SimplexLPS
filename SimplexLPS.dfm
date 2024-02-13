@@ -1,26 +1,27 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  AutoSize = True
   BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = #1057#1080#1084#1087#1083#1077#1082#1089'-'#1084#1077#1090#1086#1076' '#1088#1077#1096#1077#1085#1080#1103' '#1079#1072#1076#1072#1095' '#1083#1080#1085#1077#1081#1085#1086#1075#1086' '#1087#1088#1086#1075#1088#1072#1084#1084#1080#1088#1086#1074#1072#1085#1080#1103
-  ClientHeight = 473
-  ClientWidth = 741
+  ClientHeight = 481
+  ClientWidth = 743
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 741
+    Width = 743
     Height = 81
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 739
+    ExplicitWidth = 741
     object GroupBox1: TGroupBox
       Left = 9
       Top = 0
@@ -86,31 +87,31 @@ object Form1: TForm1
   object Panel2: TPanel
     Left = 0
     Top = 81
-    Width = 741
+    Width = 743
     Height = 304
     Align = alTop
     TabOrder = 1
-    ExplicitWidth = 739
+    ExplicitWidth = 741
     object StringGrid1: TStringGrid
       Left = 1
       Top = 1
-      Width = 739
+      Width = 741
       Height = 302
       Align = alClient
       DefaultColWidth = 85
       TabOrder = 0
       OnClick = StringGrid1Click
-      ExplicitWidth = 737
+      ExplicitWidth = 739
     end
   end
   object Panel3: TPanel
     Left = 0
     Top = 385
     Width = 553
-    Height = 88
+    Height = 96
     Align = alLeft
     TabOrder = 2
-    ExplicitHeight = 80
+    ExplicitHeight = 88
     object GroupBox2: TGroupBox
       Left = 9
       Top = 6
@@ -182,12 +183,12 @@ object Form1: TForm1
   object Panel4: TPanel
     Left = 553
     Top = 385
-    Width = 188
-    Height = 88
+    Width = 190
+    Height = 96
     Align = alClient
     TabOrder = 3
-    ExplicitWidth = 186
-    ExplicitHeight = 80
+    ExplicitWidth = 188
+    ExplicitHeight = 88
     object ButtonClose: TButton
       Left = 24
       Top = 32
