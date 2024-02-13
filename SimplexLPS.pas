@@ -32,6 +32,7 @@ type
     procedure StringGrid1Click(Sender: TObject);
     procedure ButtonAddClick(Sender: TObject);
     procedure ButtonCalcClick(Sender: TObject);
+    procedure ButtonLeftClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -173,6 +174,32 @@ end;
 procedure TForm1.ButtonCloseClick(Sender: TObject);
 begin
   form1.Close;
+end;
+
+procedure TForm1.ButtonLeftClick(Sender: TObject);
+var i,j,s,n,m: integer;
+    tmp: string;
+begin
+  aij[k,0] := StringGrid1.row;
+  aij[k,1] := StringGrid1.col;
+  k := k - 1;
+  m := StringGrid1.RowCount - 1;
+  n := StringGrid1.ColCount - 1;
+  StringGrid1.row := aij[k,0];
+  StringGrid1.col := aij[k,1];
+  s := Num[k];
+  for i := 1 to m do
+    for j := 1 to n do begin
+      StringGrid1.cells[j,i] := floattostr(a[s]);
+      s := s + 1
+    end;
+  tmp := StringGrid1.Cells[0,StringGrid1.Row];
+  StringGrid1.Cells[0,StringGrid1.Row] := StringGrid1.Cells[StringGrid1.Col,0];
+  StringGrid1.Cells[StringGrid1.Col,0] := tmp;
+  LabelNum.Caption:=inttostr(k);
+  if k = 0 then ButtonLeft.Enabled := false;
+  ButtonRight.Enabled := true;
+  ButtonCalc.Enabled := false
 end;
 
 procedure TForm1.StringGrid1Click(Sender: TObject);

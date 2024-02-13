@@ -153,6 +153,7 @@ object Form1: TForm1
         Caption = '<-'
         Enabled = False
         TabOrder = 0
+        OnClick = ButtonLeftClick
       end
       object ButtonRight: TButton
         Left = 231
